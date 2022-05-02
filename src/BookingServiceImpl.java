@@ -18,9 +18,11 @@ public class BookingServiceImpl extends UnicastRemoteObject implements BookingSe
         System.out.println("Para: " + trip.getGoing_to());
 
         System.out.println("Data de Saida: " + trip.getLeaving_date());
-        System.out.println("Data de Chegada: " + trip.getArriving_date());
+        System.out.println("Data de Retorno: " + trip.getArriving_date());
 
-        System.out.println("Voo direto: " + trip.getDirect_flight());
+        System.out.println("Voo Direto: " + trip.getDirect_flight());
+
+        System.out.println("Código do Voo: " + trip.getTrip_code());
 
         System.out.println("------------------------------------");
     }

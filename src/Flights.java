@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Flights {
 
     private String code;
@@ -5,6 +7,9 @@ public class Flights {
     private String going_to;
     private String leaving_date;
     private int flight_capacity;
+
+    private Random gerador = new Random();
+    private int flight_code = gerador.nextInt(2000000)+1000000;
 
     public Flights() {
     }
@@ -55,5 +60,15 @@ public class Flights {
 
     public void setFlight_capacity(int flight_capacity) {
         this.flight_capacity = flight_capacity;
+    }
+
+    public void decreaseFlightCapacity() {
+        this.flight_capacity = this.flight_capacity - 1;
+    }
+
+    public String toString() {
+        return "\n --------------------------\n"
+                + "Codigo: " + this.getCode() + "\nSaida: " + this.getLeaving_from() + "\nDestino: " +this.getGoing_to() +
+                "\nData de saida: " + this.getLeaving_date() + "\nCapacidade do aviao: " + this.getFlight_capacity();
     }
 }

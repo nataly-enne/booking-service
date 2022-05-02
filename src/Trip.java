@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Random;
 
 public class Trip implements Serializable {
     private String leaving_from;
@@ -6,6 +7,9 @@ public class Trip implements Serializable {
     private String leaving_date;
     private String arriving_date;
     private Boolean isDirect_flight = false;
+
+    private Random gerador = new Random();
+    private int trip_code = gerador.nextInt(2000000) + 1000000;
 
     public Trip() {
 
@@ -56,5 +60,9 @@ public class Trip implements Serializable {
         if(direct_flight == 's' || direct_flight == 'S') {
             isDirect_flight = true;
         }
+    }
+
+    public int getTrip_code() {
+        return trip_code;
     }
 }
